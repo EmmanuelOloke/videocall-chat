@@ -2,10 +2,8 @@ const express = require('express');
 const http = require('http');
 const app = express();
 const server = http.createServer(app);
-// const socket = require('socket.io');
-// const io = socket(server);
-
 const io = require('socket.io')(server, {
+  // done to avoid some cors error gotten with the newer version
   cors: {
     origin: 'http://localhost:3000',
     method: ['GET', 'POST'],
