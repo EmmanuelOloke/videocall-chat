@@ -24,6 +24,10 @@ function App() {
   const userVideo = useRef();
   const connectionRef = useRef();
 
+  useEffect(() => {
+    navigator.mediaDevices.getUserMedia({ video: true, audio: true });
+  }, []);
+
   return (
     <div className="App">
       <h1>It all starts here</h1>
