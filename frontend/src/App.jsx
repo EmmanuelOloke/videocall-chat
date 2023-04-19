@@ -1,10 +1,24 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
+import { Icon, Button, IconButton, Input } from '@chakra-ui/react';
+import { PhoneIcon } from '@chakra-ui/icons';
+import { AssignmentIcon } from 'react-icons/md';
+import { useState, useEffect, useRef } from 'react';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
+import Peer from 'simple-peer';
+import io from 'socket.io-client';
 import './App.css';
 
+const socket = io.connect('http://localhost:3000');
+
 function App() {
-  const [count, setCount] = useState(0);
+  const [me, setMe] = useState('');
+  const [stream, setStream] = useState();
+  const [receivingCall, setReceivingCall] = useState(false);
+  const [caller, setCaller] = useState('');
+  const [callerSignal, setCallerSignal] = useState('');
+  const [callAccepted, setCallAccepted] = useState(false);
+  const [idToCall, setIdToCall] = useState('');
+  const [callEnded, setCallEnded] = useState(false);
+  const [name, setName] = useState('');
 
   return (
     <div className="App">
