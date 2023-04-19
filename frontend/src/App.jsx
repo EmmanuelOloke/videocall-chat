@@ -20,6 +20,10 @@ function App() {
   const [callEnded, setCallEnded] = useState(false);
   const [name, setName] = useState('');
 
+  const myVideo = useRef();
+  const userVideo = useRef();
+  const connectionRef = useRef();
+
   return (
     <div className="App">
       <h1>It all starts here</h1>
