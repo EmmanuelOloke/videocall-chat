@@ -1,5 +1,5 @@
 import { Icon, Button, IconButton, Input } from '@chakra-ui/react';
-import { PhoneIcon } from '@chakra-ui/icons';
+import { PhoneIcon, CopyIcon } from '@chakra-ui/icons';
 import { AssignmentIcon } from 'react-icons/md';
 import { useState, useEffect, useRef } from 'react';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
@@ -99,13 +99,28 @@ function App() {
 
   const leaveCall = () => {
     setCallEnded(true);
-    connectionRef.current.destroy();
+    connectionRef.current.destroy(); // This ends the connection
   };
 
   return (
-    <div className="App">
-      <h1>It all starts here</h1>
-    </div>
+    <>
+      <h1 style={{ textAlign: 'center', color: '#FFF' }}>TalentPlus Video Call</h1>
+      <div className="container">
+        <div className="video-container">
+          <div className="video">
+            {stream && (
+              <video playsInline muted ref={myVideo} autoPlay style={{ width: '18.75rem' }} />
+            )}
+          </div>
+
+          <div className="video">
+            {callAccepted && !callEnded ? (
+              <video playsInline ref={userVideo} autoPlay style={{ width: '18.75rem' }} />
+            ) : null}
+          </div>
+        </div>
+      </div>
+    </>
   );
 }
 
