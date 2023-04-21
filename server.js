@@ -5,7 +5,7 @@ const server = http.createServer(app);
 const io = require('socket.io')(server, {
   // done to avoid some cors error gotten with the newer version
   cors: {
-    origin: 'http://localhost:3000',
+    origin: 'http://127.0.0.1:5173',
     method: ['GET', 'POST'],
   },
 });
