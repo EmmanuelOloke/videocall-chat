@@ -1,10 +1,9 @@
-import { Icon, Button, IconButton, Input } from '@chakra-ui/react';
+import { Button, IconButton, Input } from '@chakra-ui/react';
 import { PhoneIcon, CopyIcon } from '@chakra-ui/icons';
-import { AssignmentIcon } from 'react-icons/md';
 import { useState, useEffect, useRef } from 'react';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import Peer from 'simple-peer';
-import io, { connect } from 'socket.io-client';
+import io from 'socket.io-client';
 import './App.css';
 
 const socket = io.connect('http://localhost:3000');
