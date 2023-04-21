@@ -121,9 +121,9 @@ function App() {
 
         <div className="myId">
           <Input
-            id="filled-basic"
-            label="Name"
-            variant="filled"
+            size="lg"
+            variant="outline"
+            placeholder="Name"
             value={name}
             onChange={(e) => setName(e.target.value)}
             mb={5}
