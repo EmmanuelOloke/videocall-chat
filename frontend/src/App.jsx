@@ -122,7 +122,7 @@ function App() {
 
         <div className="myId">
           <Input
-            id="filled-basics"
+            id="filled-basic"
             label="Name"
             variant="filled"
             value={name}
@@ -135,6 +135,38 @@ function App() {
               Copy ID
             </Button>
           </CopyToClipboard>
+
+          <Input
+            id="filled-basic"
+            label="ID to call"
+            variant="filled"
+            value={idToCall}
+            onChange={(e) => setIdToCall(e.target.value)}
+          />
+
+          <div className="call-button">
+            {callAccepted && !callEnded ? (
+              <Button variant="contained" color="secondary" onClick={leaveCall}>
+                End Call
+              </Button>
+            ) : (
+              <IconButton color="primary" aria-label="call" onClick={() => callUser(idToCall)}>
+                <PhoneIcon fontSize="large" />
+              </IconButton>
+            )}
+            {idToCall}
+          </div>
+        </div>
+
+        <div>
+          {receivingCall && !callAccepted ? (
+            <div className="caller">
+              <h1>{name} is calling...</h1>
+              <Button variant="container" color="primary" onClick={answerCall}>
+                Answer
+              </Button>
+            </div>
+          ) : null}
         </div>
       </div>
     </>
