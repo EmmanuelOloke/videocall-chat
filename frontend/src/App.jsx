@@ -119,6 +119,23 @@ function App() {
             ) : null}
           </div>
         </div>
+
+        <div className="myId">
+          <Input
+            id="filled-basics"
+            label="Name"
+            variant="filled"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            mb={5}
+          />
+
+          <CopyToClipboard text={me} style={{ marginBottom: '2rem' }}>
+            <Button variant="contained" color="primary" leftIcon={<CopyIcon fontSize="large" />}>
+              Copy ID
+            </Button>
+          </CopyToClipboard>
+        </div>
       </div>
     </>
   );
