@@ -9,4 +9,9 @@ export default defineConfig({
     // necessary for segment analytics lib to work
     global: {},
   },
+  resolve: {
+    alias: {
+      'readable-stream': 'vite-compatible-readable-stream',
+    },
+  },
 });
