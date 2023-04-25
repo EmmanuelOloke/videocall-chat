@@ -2,12 +2,12 @@ import { Box, Button, Flex, HStack, IconButton, Input, Text, VStack } from '@cha
 import { PhoneIcon, CopyIcon } from '@chakra-ui/icons';
 import React, { useState, useEffect, useRef } from 'react';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
+import Peer from 'simple-peer';
 
 // import global from 'global';
 // import * as process from 'process';
 // global.process = process;
 
-import Peer from 'simple-peer';
 import io from 'socket.io-client';
 import './App.css';
 
