@@ -1,4 +1,4 @@
-import { Box, Button, Flex, HStack, IconButton, Input, Text, VStack } from '@chakra-ui/react';
+import { Box, Button, Flex, Input, Text, VStack } from '@chakra-ui/react';
 import { PhoneIcon, CopyIcon } from '@chakra-ui/icons';
 import React, { useState, useEffect, useRef } from 'react';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
