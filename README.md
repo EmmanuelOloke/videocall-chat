@@ -12,7 +12,7 @@ In the frontend directory terminal: Also run `npm run dev` to start the frontend
 
 Visit the vite localhost url in your browser and the project should now be up and running. Then you can play with the app however you want.
 
-## Problems to fix
+## Issues to fix
 
 There seem to be some issues with the `simple-peer` npm package being used in this project. I've tried to revert to an older version but still get the same error when a user tries to initialise a call.
 
